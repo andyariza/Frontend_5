@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+        integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"
+        integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.0.2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap5.min.css">
+    <title>Reportes</title>
+    <style>
+        table thead {
+            background-color: #7303c0;
+            color: aliceblue;
+        }
+
+        .btn-primary {
+            background-color: #7952b3 !important;
+            border-color: #7952b3 !important;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:active,
+        /*.btn-primary:visited,*/
+        .btn-primary:focus {
+            background-color: #7303c0 !important;
+            border-color: #7303c0 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-12 mx-auto border-bottom mt-4">
+            <div class="col-8 mx-auto">
+                <h1 class="col-6 mx-auto c">Reportes</h1>
+            </div>
+        </div>
+
+        <div id="mensajes" class="col-8 mx-auto"></div>
+
+        <div class="col-12 mx-auto mt-4">
+            <div class="row">
+                <div class="col-2 mx-auto c">
+                    <div class="row">
+                        <a class="btn btn-primary btn-sm mb-2" href="categorias.html">Categorias</a>
+                        <a class="btn btn-primary btn-sm mb-2" href="fincas.html">Fincas</a>
+                        <a class="btn btn-primary btn-sm mb-2" href="clientes.html">Clientes</a>
+                        <a class="btn btn-primary btn-sm mb-2" href="mensajes.html">Mensajes</a>
+                        <a class="btn btn-primary btn-sm mb-2" href="reservaciones.html">Reservaciones</a>
+                        <hr class="hr">
+                        <!--<a class="btn btn-primary mb-2" href="index.html"><img src="img/back.png" alt="Regresar"> Regresar</a>-->
+                        <a class="btn btn-primary mb-2" href="index.html">Inicio</a>
+                    </div>
+                </div>
+
+                <div class="col-9 mx-auto ">
+                    <button class='btn btn-success btn-sm btnEditar' onclick="traerReporteStatus()"> Generar Reporte Status Reservas </button>
+                    <div id="resultadoStatus"></div>
+
+
+                    <input type="date" id="RstarDate" placeholder="descripcion">
+                    <input type="date" id="RdevolutionDate" placeholder="descripcion">
+                    <button class='btn btn-success btn-sm btnEditar' onclick="traerReporteDate()"> Generar Reporte por fecha </button>
+                    <div id="resultadoDate"></div>
+
+
+                    <button class='btn btn-success btn-sm btnEditar' onclick="traerReporteClientes()"> Generar Reporte Clientes y Cantidad de reservas por
+                        cliente </button>
+                    <div id="resultadoClientes"></div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--aqui se actualizara el listado del JS -->
+        <div id="listado"></div>
+
+
+    </div>
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js"
+    integrity="sha384-5h4UG+6GOuV9qXh6HqOLwZMY4mnLPraeTrjT5v07o347pj6IkfuoASuGBhfDsp3d"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.0.2/dist/sweetalert2.all.min.js"></script>
+<script src="js/reportes.js"></script>
+
+</html>
